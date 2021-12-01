@@ -5,7 +5,11 @@ const eventGridApi = axios.create({
   baseURL: apiEndpoint,
   params: {
     "api-version": "2018-01-01"
-  }
+  },
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "aeg-sas-key": eventGridKey,
+    },
 });
 
 function onSubmit() {
@@ -23,16 +27,8 @@ function onSubmit() {
     },
   };
 
-  let axiosConfig = {
-    headers: {
-      "Content-Type": "application/json;charset=UTF-8",
-      "aeg-sas-key": eventGridKey,
-      "Access-Control-Allow-Origin": "*",
-    },
-  };
-
   eventGridApi
-    .post("/events", postData, axiosConfig)
+    .post("/events", postData)
     .then((result) => {
       console.log(JSON.stringify(result));
     })
