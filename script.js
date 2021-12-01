@@ -1,5 +1,5 @@
 const eventGridKey = "3SErw+mCGtyvTWcVsa1lqd4iJiFW2IsUNmothj75J1A=";
-const apiEndpoint = "https://egtester.uksouth-1.eventgrid.azure.net/api/events";
+const apiEndpoint = "https://egtester.uksouth-1.eventgrid.azure.net/api";
 
 const eventGridApi = axios.create({
   baseURL: apiEndpoint,
