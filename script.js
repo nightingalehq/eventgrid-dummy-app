@@ -1,7 +1,5 @@
-require("dotenv").config();
-const eventGridKey = process.env.EVENTGRID_KEY;
+const eventGridKey = "3SErw+mCGtyvTWcVsa1lqd4iJiFW2IsUNmothj75J1A=";
 const apiEndpoint = "https://egtester.uksouth-1.eventgrid.azure.net/api/events";
-
 
 const eventGridApi = axios.create({
   baseURL: apiEndpoint,
@@ -20,10 +18,6 @@ function onSubmit() {
       message: "Test Message",
       email: "nikhil.kanukuntla@nhq.com",
     },
-    dataVersion: "1.0",
-    metadataVersion: "1",
-    topic:
-      "/subscriptions/ebad44a1-8089-425e-95b9-426d13f172cd/resourceGroups/temp-eventgrid-tester/providers/Microsoft.EventGrid/topics/egtester",
   };
 
   let axiosConfig = {
