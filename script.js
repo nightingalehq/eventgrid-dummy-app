@@ -3,6 +3,9 @@ const apiEndpoint = "https://egtester.uksouth-1.eventgrid.azure.net/api";
 
 const eventGridApi = axios.create({
   baseURL: apiEndpoint,
+  params: {
+    "api-version": "2018-01-01"
+  }
 });
 
 function onSubmit() {
